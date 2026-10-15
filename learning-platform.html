@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LearnSphere – Online Learning Platform</title>
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--text:#1b1f3a;--muted:#5d6280;--brand:#5b4bff;--brand-2:#ff6b9d;--border:#e4e6f0;--shadow:0 6px 20px rgba(30,30,80,.08);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10121f;--surface:#1a1d31;--text:#eef0ff;--muted:#a3a8c8;--brand:#8a7dff;--border:#2b2f4b;--shadow:0 6px 20px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10121f;--surface:#1a1d31;--text:#eef0ff;--muted:#a3a8c8;--brand:#8a7dff;--border:#2b2f4b;--shadow:0 6px 20px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.logo{font-weight:800;font-size:1.3rem;color:var(--brand)}
+nav{display:flex;gap:1.2rem;font-size:.95rem;color:var(--muted)}
+.hero{text-align:center;padding:3.5rem 5% 2rem;animation:fadeUp .8s ease both}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin-bottom:.8rem}
+.hero h1 span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:560px;margin:0 auto}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-top:1.5rem;font-weight:700}
+.stats small{display:block;font-weight:400;color:var(--muted)}
+section{padding:1.5rem 5%;max-width:1200px;margin:0 auto}
+h2{margin-bottom:1rem;font-size:1.4rem}
+.cats{display:flex;flex-wrap:wrap;gap:.6rem}
+.cat{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:.55rem 1rem;border-radius:999px;cursor:pointer;font-size:.95rem;transition:all .25s}
+.cat:hover{transform:translateY(-2px);border-color:var(--brand)}
+.cat.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;animation:fadeUp .5s ease both}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(60,50,200,.18)}
+.thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:3rem;transition:transform .4s}
+.card:hover .thumb{transform:scale(1.06)}
+.body{padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.tag{font-size:.75rem;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.05em}
+.card h3{font-size:1.05rem;line-height:1.3}
+.inst{display:flex;align-items:center;gap:.6rem;color:var(--muted);font-size:.88rem}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;display:grid;place-items:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+.inst b{color:var(--text);display:block;font-size:.9rem}
+.meta{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.83rem;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)}
+.price{font-size:1.2rem;font-weight:800}
+.price s{font-size:.8rem;font-weight:400;color:var(--muted);margin-left:.3rem}
+.btn{background:var(--brand);color:#fff;border:0;padding:.6rem 1rem;border-radius:10px;font-weight:600;cursor:pointer;transition:transform .2s,background .3s}
+.btn:hover{transform:scale(1.05)}
+.btn.done{background:#1f9d55}
+footer{text-align:center;color:var(--muted);padding:2.5rem 5%;font-size:.9rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (max-width:600px){nav{display:none}.foot{flex-wrap:wrap}.btn{width:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="logo">🎓 LearnSphere</div><nav><span>Courses</span><span>Mentors</span><span>Pricing</span></nav></header>
+
+<div class="hero">
+  <h1>Learn skills that <span>move your career</span></h1>
+  <p>Expert-led online courses you can take at your own pace, from anywhere.</p>
+  <div class="stats"><div>120+<small>Courses</small></div><div>45k<small>Students</small></div><div>4.8★<small>Avg. rating</small></div></div>
+</div>
+
+<section>
+  <h2>Browse categories</h2>
+  <div class="cats" id="cats"></div>
+</section>
+
+<section>
+  <h2 id="title">All courses</h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>© 2026 LearnSphere · Built with CSS Grid &amp; Flexbox</footer>
+
+<script>
+const courses=[
+{t:"Full-Stack Web Development",c:"Programming",i:"💻",g:"#5b4bff,#8a7dff",n:"Priya Sharma",r:"Senior Engineer",d:"12 weeks",l:48,p:4999,o:7999,s:4.8},
+{t:"Python for Data Science",c:"Data Science",i:"📊",g:"#00b4d8,#48cae4",n:"Arjun Rao",r:"Data Scientist",d:"8 weeks",l:36,p:3499,o:5499,s:4.7},
+{t:"UI/UX Design Fundamentals",c:"Design",i:"🎨",g:"#ff6b9d,#ffa6c1",n:"Meera Nair",r:"Product Designer",d:"6 weeks",l:28,p:2999,o:4499,s:4.9},
+{t:"Digital Marketing Mastery",c:"Business",i:"📈",g:"#f59e0b,#fbbf24",n:"Karan Mehta",r:"Marketing Lead",d:"5 weeks",l:24,p:2499,o:3999,s:4.6},
+{t:"Machine Learning A–Z",c:"Data Science",i:"🤖",g:"#10b981,#34d399",n:"Dr. Anita Das",r:"AI Researcher",d:"10 weeks",l:52,p:5999,o:8999,s:4.8},
+{t:"Mobile App Development",c:"Programming",i:"📱",g:"#6366f1,#a5b4fc",n:"Rahul Verma",r:"Mobile Architect",d:"9 weeks",l:40,p:4499,o:6999,s:4.7},
+{t:"Graphic Design with Figma",c:"Design",i:"✏️",g:"#ec4899,#f9a8d4",n:"Sneha Iyer",r:"Brand Designer",d:"4 weeks",l:18,p:1999,o:2999,s:4.5},
+{t:"Startup Finance Basics",c:"Business",i:"💼",g:"#0ea5e9,#7dd3fc",n:"Vikram Singh",r:"CFO & Mentor",d:"3 weeks",l:14,p:1499,o:2499,s:4.6}
+];
+const cats=["All",...new Set(courses.map(x=>x.c))];
+const $=id=>document.getElementById(id);
+let active="All";
+function renderCats(){
+  $("cats").innerHTML=cats.map(c=>`<button class="cat ${c===active?"active":""}" data-c="${c}">${c}${c==="All"?"":" ("+courses.filter(x=>x.c===c).length+")"}</button>`).join("");
+}
+function renderCourses(){
+  const list=active==="All"?courses:courses.filter(x=>x.c===active);
+  $("title").textContent=active==="All"?"All courses":active+" courses";
+  $("grid").innerHTML=list.map((x,i)=>`
+  <article class="card" style="animation-delay:${i*70}ms">
+    <div class="thumb" style="background:linear-gradient(135deg,${x.g})">${x.i}</div>
+    <div class="body">
+      <span class="tag">${x.c}</span>
+      <h3>${x.t}</h3>
+      <div class="inst"><div class="avatar">${x.n.split(" ").map(w=>w[0]).slice(0,2).join("")}</div><div><b>${x.n}</b>${x.r}</div></div>
+      <div class="meta"><span>⏱ ${x.d}</span><span>📚 ${x.l} lessons</span><span>⭐ ${x.s}</span></div>
+      <div class="foot"><div class="price">₹${x.p.toLocaleString("en-IN")}<s>₹${x.o.toLocaleString("en-IN")}</s></div><button class="btn">Enroll now</button></div>
+    </div>
+  </article>`).join("");
+}
+$("cats").addEventListener("click",e=>{const b=e.target.closest(".cat");if(!b)return;active=b.dataset.c;renderCats();renderCourses()});
+$("grid").addEventListener("click",e=>{const b=e.target.closest(".btn");if(!b)return;b.textContent="✓ Enrolled";b.classList.add("done");b.disabled=true});
+renderCats();renderCourses();
+</script>
+</body>
+</html>
